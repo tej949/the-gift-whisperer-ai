@@ -3,7 +3,7 @@ import { toast } from "sonner";
 
 const API_KEY = "AIzaSyDO0R-9FhBajxi-TznQ95INqHjzKXEZ50w";
 // Updated API URL to use the correct Gemini API version and model
-const API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-1.0-pro:generateContent";
+const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
 
 export interface GiftSuggestionRequest {
   age: string;
