@@ -1,73 +1,79 @@
-# Welcome to your Lovable project
+GiftWhisperer leverages the power of Google Gemini AI to deliver lightning-fast, personalized gift suggestions. With a sleek, responsive UI and seamless performance, it’s built to impress—on any screen.
 
-## Project info
+✨ Features
+🧠 Intelligent Recommendations: AI-driven suggestions based on age, occasion, interests, budget, and relationship
+🎨 Modern UI/UX: Beautifully designed dashboard with smooth, animated transitions
+⚡ Real-Time Results: Receive 3 curated gift ideas in under 2 seconds
+📱 Fully Responsive: Optimized for mobile, tablet, and desktop devices
 
-**URL**: https://lovable.dev/projects/601a83ac-6415-41fa-aa3a-eccc40489c94
+🛠 Tech Stack
+Frontend: React + Vite + TypeScript
+UI Library: shadcn/ui + Tailwind CSS
+AI Integration: Google Gemini API
+Hosting: Lovable (custom domain support included)
 
-## How can I edit this code?
+🚀 Getting Started
+1. Clone the Repository
+git clone https://github.com/yourusername/giftgenius.git
+cd GiftWhisperer
 
-There are several ways of editing your application.
+2. Install Dependencies
+npm install
 
-**Use Lovable**
+3. Set Up Environment Variables
+Create a .env file in the root directory:
+VITE_GEMINI_API_KEY=your_api_key_here
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/601a83ac-6415-41fa-aa3a-eccc40489c94) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+5. Run Locally
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+🔄 How It Works
+sequenceDiagram
+    User->>Frontend: Inputs age, occasion, interests, etc.
+    Frontend->>Gemini API: Sends structured prompt
+    Gemini API->>Frontend: Returns gift recommendations (JSON)
+    Frontend->>User: Displays animated gift cards
+    
+🧩 Key Components
+🎯 Prompt Engineering
+const generatePrompt = (inputs: GiftInputs) => `
+Act as an expert gift advisor. Suggest 3 gifts matching:
+- Age: ${inputs.age}
+- Occasion: ${inputs.occasion}
+- Interests: ${inputs.interests.join(', ')}
+- Budget: $${inputs.budget}
+- Relationship: ${inputs.relation}
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Output JSON:
+{
+  "gifts": [
+    {
+      "name": "...",
+      "price": "...",
+      "reason": "...",
+      "purchase_link": "..."
+    }
+  ]
+}
+`;
+🖼 UI Snapshots
+Dashboard
+![Screenshot (230)](https://github.com/user-attachments/assets/8e5a0dcd-9153-440f-b3d3-c6ee89ec6844)
 
-**Use GitHub Codespaces**
+Gift Results
+![Screenshot (231)](https://github.com/user-attachments/assets/d05ede92-d24b-49a0-bb4d-b00c066e64fe)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+📦 Deployment
+Push updates to the main branch
+In the Lovable dashboard:
+Navigate to Share → Publish
+Connect a custom domain (optional)
 
-## What technologies are used for this project?
+🎨 Customization
+Want to tweak the look or logic?
+Colors & Themes: src/styles/globals.css
+Layout Components: src/components/ui/
+AI Prompt Logic: src/lib/gemini.ts
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/601a83ac-6415-41fa-aa3a-eccc40489c94) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes it is!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+📄 License
+MIT License © 2024 VALLEM TEJOMAI
